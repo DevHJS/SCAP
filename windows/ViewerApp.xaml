@@ -1,0 +1,108 @@
+﻿<Window
+    x:Class="SCAP.windows.ViewerApp"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:SCAP.windows"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="viewer"
+    Width="800"
+    Height="450"
+    AllowsTransparency="True"
+    Background="Transparent"
+    Icon="/SCAP;component/icons/scissor.ico"
+    MouseLeftButtonDown="Window_dragMove"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <WindowChrome.WindowChrome>
+        <WindowChrome
+            CaptionHeight="0"
+            CornerRadius="0"
+            GlassFrameThickness="0" />
+    </WindowChrome.WindowChrome>
+    <Border
+        Padding="5"
+        Background="#202020"
+        BorderBrush="Transparent"
+        BorderThickness="2"
+        CornerRadius="15">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Button
+                x:Name="saveImage"
+                Grid.Row="0"
+                Width="50"
+                Height="50"
+                HorizontalAlignment="Right"
+                Background="Transparent"
+                BorderBrush="Transparent"
+                Click="SaveImage">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/SCAP;component/icons/tick.png" />
+
+                </StackPanel>
+            </Button>
+            <Button
+                x:Name="Discard"
+                Grid.Row="0"
+                Width="50"
+                Height="50"
+                Margin="0,0,50,0"
+                HorizontalAlignment="Right"
+                Background="Transparent"
+                BorderBrush="Transparent"
+                Click="close_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image
+                        Width="50"
+                        Height="50"
+                        Source="/SCAP;component/icons/cross.png" />
+                </StackPanel>
+            </Button>
+            <Button
+                x:Name="Repeat"
+                Grid.Row="0"
+                Width="50"
+                Height="50"
+                Margin="0,0,100,0"
+                HorizontalAlignment="Right"
+                Background="Transparent"
+                BorderBrush="Transparent"
+                Click="RetakeImage">
+                <StackPanel Orientation="Horizontal">
+                    <Image
+                        Width="40"
+                        Height="40"
+                        Source="/SCAP;component/icons/repeat2.ico"
+                        Stretch="Uniform" />
+                </StackPanel>
+            </Button>
+            <Image
+                x:Name="appIcon"
+                Grid.Row="0"
+                Width="50"
+                Height="30"
+                HorizontalAlignment="Left"
+                Source="/SCAP;component/icons/scissor.ico"
+                Stretch="Fill" />
+            <Label
+                Grid.Row="0"
+                Height="40"
+                Margin="50,0,0,0"
+                HorizontalAlignment="Left"
+                Content="SCAP"
+                FontFamily="arial"
+                FontSize="20" />
+
+
+            <Image x:Name="ViewImg" Grid.Row="1" />
+
+        </Grid>
+    </Border>
+</Window>
